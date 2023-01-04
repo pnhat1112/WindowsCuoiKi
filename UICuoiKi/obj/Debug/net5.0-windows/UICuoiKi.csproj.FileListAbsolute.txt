@@ -55,3 +55,4 @@ C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\
 C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\TagLibSharp.dll
 C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\NAudio.dll
 C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.SongForm.resources
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.FormAddPL.resources

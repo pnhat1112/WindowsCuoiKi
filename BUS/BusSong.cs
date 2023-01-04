@@ -10,7 +10,6 @@ namespace BUS
 {
     public class BusSong
     {
-        private DataTable save;
         public DataTable getAll()
         {
             DalSong dalsong = new DalSong();

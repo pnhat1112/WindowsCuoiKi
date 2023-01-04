@@ -35,8 +35,6 @@
             this.addSongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.playBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backImageList = new System.Windows.Forms.ImageList(this.components);
             this.playImageList = new System.Windows.Forms.ImageList(this.components);
             this.stopImageList = new System.Windows.Forms.ImageList(this.components);
@@ -57,25 +55,30 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.assToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playlist_table_menu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewPlaylistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.musicBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playlistGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.albumArtBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrv_songs)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.playlist_table_menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.playBackToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1019, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -107,18 +110,6 @@
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // playBackToolStripMenuItem
-            // 
-            this.playBackToolStripMenuItem.Name = "playBackToolStripMenuItem";
-            this.playBackToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.playBackToolStripMenuItem.Text = "Playback";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
             // 
             // backImageList
             // 
@@ -247,6 +238,8 @@
             // 
             // playlistGridView
             // 
+            this.playlistGridView.AllowUserToAddRows = false;
+            this.playlistGridView.AllowUserToDeleteRows = false;
             this.playlistGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.playlistGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.playlistGridView.Location = new System.Drawing.Point(17, 107);
@@ -255,6 +248,8 @@
             this.playlistGridView.RowTemplate.Height = 25;
             this.playlistGridView.Size = new System.Drawing.Size(184, 303);
             this.playlistGridView.TabIndex = 17;
+            this.playlistGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.playlistGridView_CellContentClick);
+            this.playlistGridView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.playlistGridView_MouseDown);
             // 
             // albumArtBox
             // 
@@ -310,6 +305,43 @@
             this.asToolStripMenuItem.Text = "Remove";
             this.asToolStripMenuItem.Click += new System.EventHandler(this.asToolStripMenuItem_Click);
             // 
+            // playlist_table_menu
+            // 
+            this.playlist_table_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.removeToolStripMenuItem,
+            this.renameToolStripMenuItem,
+            this.addNewPlaylistToolStripMenuItem});
+            this.playlist_table_menu.Name = "playlist_table_menu";
+            this.playlist_table_menu.Size = new System.Drawing.Size(160, 92);
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.addToolStripMenuItem.Text = "add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.removeToolStripMenuItem.Text = "remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
+            // 
+            // renameToolStripMenuItem
+            // 
+            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.renameToolStripMenuItem.Text = "rename";
+            // 
+            // addNewPlaylistToolStripMenuItem
+            // 
+            this.addNewPlaylistToolStripMenuItem.Name = "addNewPlaylistToolStripMenuItem";
+            this.addNewPlaylistToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.addNewPlaylistToolStripMenuItem.Text = "add new playlist";
+            this.addNewPlaylistToolStripMenuItem.Click += new System.EventHandler(this.addNewPlaylistToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -338,6 +370,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.albumArtBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrv_songs)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.playlist_table_menu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,8 +381,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addSongToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem playBackToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ImageList backImageList;
         private System.Windows.Forms.ImageList playImageList;
         private System.Windows.Forms.ImageList stopImageList;
@@ -372,5 +403,10 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem assToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip playlist_table_menu;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewPlaylistToolStripMenuItem;
     }
 }

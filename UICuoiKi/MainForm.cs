@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using TagLib.Mpeg;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
@@ -19,11 +20,14 @@ namespace UICuoiKi
     public partial class MainForm : Form
     {
         private BusSong bs = new BusSong();
+        private BusPlaylist busPlaylist = new BusPlaylist();
         private DataTable data;
+        private DataTable listPlaylist;
         AudioFileReader audioFile = null;
         private IWavePlayer player = new WaveOut();
         List<int> history= new List<int>();
         int clickedSongIndex;
+        int clickedPlaylistIndex;
         int curentHis = -1;
         public MainForm()
         {
@@ -33,6 +37,13 @@ namespace UICuoiKi
         private void MainForm_Load(object sender, EventArgs e)
         {
             dtgrv_songs.AutoGenerateColumns = false;
+            playlistGridView.AutoGenerateColumns = false;
+
+            DataGridViewColumn playlist = new DataGridViewTextBoxColumn();
+            playlist.DataPropertyName = "name";
+            playlist.HeaderText = "PlayList";
+            playlistGridView.Columns.Add(playlist);
+            playlistGridView.Columns[0].Width = 300;
 
             DataGridViewColumn titleColumn = new DataGridViewTextBoxColumn();
             titleColumn.DataPropertyName = "name";
@@ -54,7 +65,57 @@ namespace UICuoiKi
             dtgrv_songs.Columns[2].Width = 210;
             data = bs.getAll();
             dtgrv_songs.DataSource = data;
+            updatePlaylist();
+        }
+        private void AddPlaylist_Click(object sender, EventArgs e)
+        {
+
+            var menuItem = sender as ToolStripMenuItem;
+            string playlistname = menuItem.Text;
+            DataRow row = data.Rows[clickedSongIndex];
+            string songname = row[0].ToString();
+            try
+            {
+                busPlaylist.addSongToPlaylist(playlistname, songname);
+                MessageBox.Show("adding successfully");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             
+        }
+        private void updatePlaylist()
+        {
+            try
+            {
+                contextMenuStrip1.Items.RemoveAt(2);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            listPlaylist = busPlaylist.getAll();
+            playlistGridView.DataSource = listPlaylist;
+
+            ToolStripMenuItem mySubMenu = new ToolStripMenuItem();
+            mySubMenu.Text = "Add song to playlist";
+
+            ToolStripMenuItem myItem = null;
+
+            for (int i = 0; i < listPlaylist.Rows.Count; i++)
+            {
+                string playlistname = listPlaylist.Rows[i][0].ToString();
+                if (playlistname != "All")
+                {
+                    myItem = new ToolStripMenuItem();
+                    myItem.Text = playlistname;
+                    myItem.Click += new EventHandler(AddPlaylist_Click);
+                    mySubMenu.DropDownItems.Add(myItem);
+                }
+            }
+            contextMenuStrip1.Items.Add(mySubMenu);
         }
 
         private void btnPlayPause_Click(object sender, EventArgs e)
@@ -119,7 +180,8 @@ namespace UICuoiKi
         }
         private void playSong(int rowIndex)
         {
-            DataRow row = data.Rows[rowIndex];
+            DataTable table = dtgrv_songs.DataSource as DataTable;
+            DataRow row = table.Rows[rowIndex];
             string a = (String)row["path"];
             string path = a.Replace("[]", @"\");
             /*            MessageBox.Show(path);
@@ -223,7 +285,8 @@ namespace UICuoiKi
 
         private void assToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataRow row = data.Rows[clickedSongIndex];
+            DataTable table = dtgrv_songs.DataSource as DataTable;
+            DataRow row = table.Rows[clickedSongIndex];
             string name = row[0].ToString();
             string artist = row[1].ToString();
             string path = row[2].ToString();
@@ -275,6 +338,87 @@ namespace UICuoiKi
                 curentHis = curentHis + 1;
                 playSong(history[curentHis]);
             }
+        }
+
+        private void playlistGridView_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                playlist_table_menu.Show(MousePosition);
+
+            }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void playlistGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int index = playlistGridView.CurrentCell.RowIndex;
+            clickedPlaylistIndex = index;
+            string playlistname = Convert.ToString(listPlaylist.Rows[clickedPlaylistIndex][0]);
+            if (playlistname == "All")
+            {
+                dtgrv_songs.DataSource = data;
+            }
+            else
+            {
+                DataTable temp = busPlaylist.getPlaylist(playlistname);
+                dtgrv_songs.DataSource = temp;
+            }
+        }
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string playlistname = Convert.ToString(listPlaylist.Rows[clickedPlaylistIndex][0]);
+            if (playlistname == "All")
+            {
+                MessageBox.Show("Cannot remove root playlist");
+            }
+            else
+            {
+                
+                try
+                {
+                    busPlaylist.removePlaylist(playlistname);
+                    updatePlaylist();
+                    MessageBox.Show($"remove playlist {playlistname} successfully");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addNewPlaylistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var frsong = new FormAddPL())
+            {
+                var result = frsong.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    try
+                    {
+                        busPlaylist.addPlaylist(frsong.name);
+                        updatePlaylist();
+                        MessageBox.Show("Adding new playlist successfully");
+                    }
+                    catch(Exception ex) {
+                        MessageBox.Show(ex.Message);
+                    }
+                    
+                }
+            }
+
         }
     }
 }
