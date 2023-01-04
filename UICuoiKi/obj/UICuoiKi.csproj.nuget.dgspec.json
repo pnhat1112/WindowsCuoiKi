@@ -1,24 +1,140 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Learning\\VKU\\Năm 4 Kì 1\\Windows\\Project\\CuoiKi\\UICuoiKi\\UICuoiKi\\UICuoiKi.csproj": {}
+    "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\UICuoiKi\\UICuoiKi.csproj": {}
   },
   "projects": {
-    "D:\\Learning\\VKU\\Năm 4 Kì 1\\Windows\\Project\\CuoiKi\\UICuoiKi\\UICuoiKi\\UICuoiKi.csproj": {
+    "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\BUS\\BUS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learning\\VKU\\Năm 4 Kì 1\\Windows\\Project\\CuoiKi\\UICuoiKi\\UICuoiKi\\UICuoiKi.csproj",
-        "projectName": "UICuoiKi",
-        "projectPath": "D:\\Learning\\VKU\\Năm 4 Kì 1\\Windows\\Project\\CuoiKi\\UICuoiKi\\UICuoiKi\\UICuoiKi.csproj",
-        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "D:\\Learning\\VKU\\Năm 4 Kì 1\\Windows\\Project\\CuoiKi\\UICuoiKi\\UICuoiKi\\obj\\",
+        "projectUniqueName": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\BUS\\BUS.csproj",
+        "projectName": "BUS",
+        "projectPath": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\BUS\\BUS.csproj",
+        "packagesPath": "C:\\Users\\thanhtuan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\BUS\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
+          "C:\\Users\\thanhtuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\DAL\\DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\DAL\\DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\DAL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\thanhtuan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\thanhtuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\UICuoiKi\\UICuoiKi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\UICuoiKi\\UICuoiKi.csproj",
+        "projectName": "UICuoiKi",
+        "projectPath": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\UICuoiKi\\UICuoiKi.csproj",
+        "packagesPath": "C:\\Users\\thanhtuan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\UICuoiKi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\thanhtuan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,13 +142,16 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\BUS\\BUS.csproj": {
+                "projectPath": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\BUS\\BUS.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -44,6 +163,12 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "TagLibSharp": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -63,7 +188,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

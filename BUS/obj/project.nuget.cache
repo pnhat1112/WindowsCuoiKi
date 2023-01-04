@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "X7k5TqjONcfFmVrebUZpyawJkJ43xnmU0LpYd2I48h80ba09Lvng7XzOA6tEKx/FSTOSDV7hA3YrOq6jHtkefw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\BUS\\BUS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\thanhtuan\\.nuget\\packages\\mysqlconnector\\2.2.3\\mysqlconnector.2.2.3.nupkg.sha512",
+    "C:\\Users\\thanhtuan\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\thanhtuan\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

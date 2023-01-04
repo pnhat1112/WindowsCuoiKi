@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "CY/fFENqU0afloxqJvpKwEB2k/7vqBb4BQ7oT8J8R0PhucLATKWcGn+5T+L9KLZj9SqTGiSofaWbGfPXM84ETw==",
+  "dgSpecHash": "s+D9TTncDGfHfpDHhuxRyIPu68+nU4eusvtwlZhPjsOaLE0h9Eq2EKCRMgVtp8gBFBU2Evj/+ai4ruZ82dM/ag==",
   "success": true,
-  "projectFilePath": "D:\\Learning\\VKU\\Năm 4 Kì 1\\Windows\\Project\\CuoiKi\\UICuoiKi\\UICuoiKi\\UICuoiKi.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\thanhtuan\\source\\repos\\WindowsCuoiKi\\UICuoiKi\\UICuoiKi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\thanhtuan\\.nuget\\packages\\mysqlconnector\\2.2.3\\mysqlconnector.2.2.3.nupkg.sha512",
+    "C:\\Users\\thanhtuan\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\thanhtuan\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\thanhtuan\\.nuget\\packages\\taglibsharp\\2.3.0\\taglibsharp.2.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

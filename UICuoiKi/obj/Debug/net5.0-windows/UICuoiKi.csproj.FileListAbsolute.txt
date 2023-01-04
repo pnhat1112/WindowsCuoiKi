@@ -17,3 +17,41 @@ D:\Learning\VKU\Năm 4 Kì 1\Windows\Project\CuoiKi\UICuoiKi\UICuoiKi\obj\Debug\
 D:\Learning\VKU\Năm 4 Kì 1\Windows\Project\CuoiKi\UICuoiKi\UICuoiKi\obj\Debug\net5.0-windows\ref\UICuoiKi.dll
 D:\Learning\VKU\Năm 4 Kì 1\Windows\Project\CuoiKi\UICuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.MainForm.resources
 D:\Learning\VKU\Năm 4 Kì 1\Windows\Project\CuoiKi\UICuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.Properties.Resources.resources
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\UICuoiKi.exe
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\UICuoiKi.deps.json
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\UICuoiKi.runtimeconfig.json
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\UICuoiKi.runtimeconfig.dev.json
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\UICuoiKi.dll
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\UICuoiKi.pdb
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.csproj.AssemblyReference.cache
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.MainForm.resources
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.Properties.Resources.resources
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.csproj.GenerateResource.cache
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.AssemblyInfoInputs.cache
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.AssemblyInfo.cs
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.csproj.CoreCompileInputs.cache
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.dll
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\refint\UICuoiKi.dll
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.pdb
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.genruntimeconfig.cache
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\ref\UICuoiKi.dll
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\BUS.deps.json
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\BUS.runtimeconfig.json
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\BUS.runtimeconfig.dev.json
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\DAL.deps.json
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\DAL.runtimeconfig.json
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\DAL.runtimeconfig.dev.json
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\DAL.exe
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\BUS.exe
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\MySqlConnector.dll
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\BUS.dll
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\DAL.dll
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\BUS.pdb
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\DAL.pdb
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.csproj.CopyComplete
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\TagLibSharp.dll
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\bin\Debug\net5.0-windows\NAudio.dll
+C:\Users\thanhtuan\source\repos\WindowsCuoiKi\UICuoiKi\obj\Debug\net5.0-windows\UICuoiKi.SongForm.resources

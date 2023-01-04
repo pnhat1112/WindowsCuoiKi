@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TrackBar volumeTrackbar;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addSongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backImageList = new System.Windows.Forms.ImageList(this.components);
@@ -45,32 +46,24 @@
             this.btnPlayPause = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.musicBar = new System.Windows.Forms.TrackBar();
-            this.currentTimeLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_currentTime = new System.Windows.Forms.Label();
+            this.lbl_fixedTime = new System.Windows.Forms.Label();
+            this.lb_title = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.playlistGridView = new System.Windows.Forms.DataGridView();
             this.albumArtBox = new System.Windows.Forms.PictureBox();
-            this.songsGridView = new System.Windows.Forms.DataGridView();
-            volumeTrackbar = new System.Windows.Forms.TrackBar();
-            ((System.ComponentModel.ISupportInitialize)(volumeTrackbar)).BeginInit();
+            this.dtgrv_songs = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.assToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.musicBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playlistGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.albumArtBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.songsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgrv_songs)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // volumeTrackbar
-            // 
-            volumeTrackbar.AutoSize = false;
-            volumeTrackbar.Location = new System.Drawing.Point(216, 59);
-            volumeTrackbar.Maximum = 100;
-            volumeTrackbar.Name = "volumeTrackbar";
-            volumeTrackbar.Size = new System.Drawing.Size(123, 23);
-            volumeTrackbar.TabIndex = 5;
-            volumeTrackbar.TickStyle = System.Windows.Forms.TickStyle.None;
-            volumeTrackbar.Value = 50;
             // 
             // menuStrip1
             // 
@@ -87,7 +80,9 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addSongToolStripMenuItem});
+            this.addSongToolStripMenuItem,
+            this.addFolderToolStripMenuItem,
+            this.saveToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -95,8 +90,23 @@
             // addSongToolStripMenuItem
             // 
             this.addSongToolStripMenuItem.Name = "addSongToolStripMenuItem";
-            this.addSongToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addSongToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.addSongToolStripMenuItem.Text = "Add song";
+            this.addSongToolStripMenuItem.Click += new System.EventHandler(this.addSongToolStripMenuItem_Click);
+            // 
+            // addFolderToolStripMenuItem
+            // 
+            this.addFolderToolStripMenuItem.Name = "addFolderToolStripMenuItem";
+            this.addFolderToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.addFolderToolStripMenuItem.Text = "Add folder";
+            this.addFolderToolStripMenuItem.Click += new System.EventHandler(this.addFolderToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // playBackToolStripMenuItem
             // 
@@ -155,6 +165,7 @@
             this.btnBack.Size = new System.Drawing.Size(59, 36);
             this.btnBack.TabIndex = 1;
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnPlayPause
             // 
@@ -176,47 +187,53 @@
             this.btnNext.Size = new System.Drawing.Size(59, 36);
             this.btnNext.TabIndex = 3;
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // musicBar
             // 
             this.musicBar.AutoSize = false;
             this.musicBar.LargeChange = 0;
-            this.musicBar.Location = new System.Drawing.Point(368, 70);
+            this.musicBar.Location = new System.Drawing.Point(355, 80);
             this.musicBar.Maximum = 1000;
             this.musicBar.Name = "musicBar";
             this.musicBar.Size = new System.Drawing.Size(437, 15);
             this.musicBar.SmallChange = 0;
             this.musicBar.TabIndex = 12;
             this.musicBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.musicBar.ValueChanged += new System.EventHandler(this.musicBar_ValueChanged);
+            this.musicBar.CursorChanged += new System.EventHandler(this.musicBar_CursorChanged);
+            this.musicBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.musicBar_MouseDown);
+            this.musicBar.MouseEnter += new System.EventHandler(this.musicBar_MouseEnter);
             // 
-            // currentTimeLabel
+            // lbl_currentTime
             // 
-            this.currentTimeLabel.AutoSize = true;
-            this.currentTimeLabel.Location = new System.Drawing.Point(370, 52);
-            this.currentTimeLabel.Name = "currentTimeLabel";
-            this.currentTimeLabel.Size = new System.Drawing.Size(28, 15);
-            this.currentTimeLabel.TabIndex = 13;
-            this.currentTimeLabel.Text = "0:00";
-            this.currentTimeLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lbl_currentTime.AutoSize = true;
+            this.lbl_currentTime.Location = new System.Drawing.Point(357, 62);
+            this.lbl_currentTime.Name = "lbl_currentTime";
+            this.lbl_currentTime.Size = new System.Drawing.Size(28, 15);
+            this.lbl_currentTime.TabIndex = 13;
+            this.lbl_currentTime.Text = "0:00";
+            this.lbl_currentTime.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // label1
+            // lbl_fixedTime
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(777, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 15);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "0:00";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.lbl_fixedTime.AutoSize = true;
+            this.lbl_fixedTime.Location = new System.Drawing.Point(764, 62);
+            this.lbl_fixedTime.Name = "lbl_fixedTime";
+            this.lbl_fixedTime.Size = new System.Drawing.Size(28, 15);
+            this.lbl_fixedTime.TabIndex = 14;
+            this.lbl_fixedTime.Text = "0:00";
+            this.lbl_fixedTime.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // label2
+            // lb_title
             // 
-            this.label2.Location = new System.Drawing.Point(373, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(432, 34);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Title Music";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_title.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_title.Location = new System.Drawing.Point(360, 28);
+            this.lb_title.Name = "lb_title";
+            this.lb_title.Size = new System.Drawing.Size(432, 34);
+            this.lb_title.TabIndex = 15;
+            this.lb_title.Text = "Title Music";
+            this.lb_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // searchBox
             // 
@@ -249,31 +266,63 @@
             this.albumArtBox.TabIndex = 18;
             this.albumArtBox.TabStop = false;
             // 
-            // songsGridView
+            // dtgrv_songs
             // 
-            this.songsGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.songsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.songsGridView.Location = new System.Drawing.Point(224, 108);
-            this.songsGridView.Name = "songsGridView";
-            this.songsGridView.ReadOnly = true;
-            this.songsGridView.RowTemplate.Height = 25;
-            this.songsGridView.Size = new System.Drawing.Size(761, 477);
-            this.songsGridView.TabIndex = 19;
+            this.dtgrv_songs.AllowUserToAddRows = false;
+            this.dtgrv_songs.AllowUserToDeleteRows = false;
+            this.dtgrv_songs.AllowUserToOrderColumns = true;
+            this.dtgrv_songs.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgrv_songs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgrv_songs.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgrv_songs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgrv_songs.Location = new System.Drawing.Point(224, 108);
+            this.dtgrv_songs.Name = "dtgrv_songs";
+            this.dtgrv_songs.ReadOnly = true;
+            this.dtgrv_songs.RowTemplate.Height = 25;
+            this.dtgrv_songs.Size = new System.Drawing.Size(761, 477);
+            this.dtgrv_songs.TabIndex = 19;
+            this.dtgrv_songs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgrv_songs_CellContentClick);
+            this.dtgrv_songs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dtgrv_songs_MouseDown);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.assToolStripMenuItem,
+            this.asToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 48);
+            // 
+            // assToolStripMenuItem
+            // 
+            this.assToolStripMenuItem.Name = "assToolStripMenuItem";
+            this.assToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.assToolStripMenuItem.Text = "Update";
+            this.assToolStripMenuItem.Click += new System.EventHandler(this.assToolStripMenuItem_Click);
+            // 
+            // asToolStripMenuItem
+            // 
+            this.asToolStripMenuItem.Name = "asToolStripMenuItem";
+            this.asToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.asToolStripMenuItem.Text = "Remove";
+            this.asToolStripMenuItem.Click += new System.EventHandler(this.asToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 597);
-            this.Controls.Add(this.songsGridView);
+            this.Controls.Add(this.dtgrv_songs);
             this.Controls.Add(this.albumArtBox);
             this.Controls.Add(this.playlistGridView);
             this.Controls.Add(this.searchBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.currentTimeLabel);
+            this.Controls.Add(this.lb_title);
+            this.Controls.Add(this.lbl_fixedTime);
+            this.Controls.Add(this.lbl_currentTime);
             this.Controls.Add(this.musicBar);
-            this.Controls.Add(volumeTrackbar);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPlayPause);
             this.Controls.Add(this.btnBack);
@@ -282,13 +331,13 @@
             this.Name = "MainForm";
             this.Text = "Mucsic Timeee";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(volumeTrackbar)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.musicBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playlistGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.albumArtBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.songsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgrv_songs)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,12 +359,18 @@
         private System.Windows.Forms.Button btnPlayPause;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.TrackBar musicBar;
-        private System.Windows.Forms.Label currentTimeLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_currentTime;
+        private System.Windows.Forms.Label lbl_fixedTime;
+        private System.Windows.Forms.Label lb_title;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.DataGridView playlistGridView;
         private System.Windows.Forms.PictureBox albumArtBox;
-        private System.Windows.Forms.DataGridView songsGridView;
+        private System.Windows.Forms.DataGridView dtgrv_songs;
+        private System.Windows.Forms.ToolStripMenuItem addFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem assToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asToolStripMenuItem;
     }
 }

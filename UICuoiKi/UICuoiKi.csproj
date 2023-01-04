@@ -26,4 +26,18 @@
     <Folder Include="Data\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="TagLibSharp" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NAudio">
+      <HintPath>..\..\winforms-music-player-master\winforms-music-player-master\MusicPlayer\Resources\NAudio.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
